@@ -1,6 +1,4 @@
 ﻿// **************************************************
-// **************************************************
-// **************************************************
 // Default
 // **************************************************
 using Microsoft.AspNetCore.Builder;
@@ -11,7 +9,7 @@ var builder =
 var app =
 	builder.Build();
 
-// MapGet() -> using Microsoft.AspNetCore.Builder;
+// using Microsoft.AspNetCore.Builder;
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
@@ -19,8 +17,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 1
 // **************************************************
@@ -49,13 +47,13 @@ app.Run();
 //	return result;
 //});
 
-//// MapPost() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.MapPost(pattern: "/", handler: () => "Hello World (Post)!");
 
-//// MapPut() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.MapPut(pattern: "/", handler: () => "Hello World (Put)!");
 
-//// MapDelete() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.MapDelete(pattern: "/", handler: () => "Hello World (Delete)!");
 
 //app.Run();
@@ -64,7 +62,7 @@ app.Run();
 // **************************************************
 
 // **************************************************
-// **************************************************
+// *** Documents ************************************
 // **************************************************
 // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/
 // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write/
@@ -75,8 +73,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 2
 // **************************************************
@@ -106,8 +104,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 3
 // **************************************************
@@ -138,8 +136,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 4
 // **************************************************
@@ -181,8 +179,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 5
 // **************************************************
@@ -216,8 +214,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 6
 // **************************************************
@@ -250,8 +248,8 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 7
 // **************************************************
@@ -302,15 +300,17 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 8
 // **************************************************
-// https://localhost:7271/
-// https://localhost:7271/test1
-// https://localhost:7271/test2
-// https://localhost:7271/test3
+// https://localhost:6001/
+// https://localhost:6001/alaki
+//
+// https://localhost:6001/test1
+// https://localhost:6001/test2
+// https://localhost:6001/test3
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -365,13 +365,13 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
+
+
 // **************************************************
 // Learn 9
 // **************************************************
-// https://localhost:7271/		->	23
-// https://localhost:7271/test	->	22
+// https://localhost:6001/
+// https://localhost:6001/about
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -383,22 +383,51 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// Map() -> using Microsoft.AspNetCore.Builder;
-//app.Map(pathMatch: "/test", configuration: app =>
+//// دستور ذیل کار نمی‌کند
+////app.Map(pathMatch: "/", configuration: app =>
+////{
+////	app.Run(handler: async context =>
+////	{
+////		await context.Response
+////			.WriteAsync(text: "<h1>Home</h1>");
+////	});
+////});
+
+//// کار نمی‌کند app.Run() دستور ذیل نیز با حضور دستور
+////app.MapGet(pattern: "/", handler: () =>
+////{
+////	var result = "Hello";
+
+////	if (1 == 1)
+////	{
+////		result += " World!";
+////	}
+
+////	return result;
+////});
+
+//// دستور ذیل هم درست کار نمی‌کند، با نوشتن
+//// دستور ذیل هر آدرسی که بزنیم، صفحه خانه را نشان می‌دهد
+////app.Map(pathMatch: "", configuration: app =>
+////{
+////	app.Run(handler: async context =>
+////	{
+////		await context.Response
+////			.WriteAsync(text: "<h1>Home</h1>");
+////	});
+////});
+
+//app.Map(pathMatch: "/about", configuration: app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
 //	app.Run(handler: async context =>
 //	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //		await context.Response
-//			.WriteAsync(text: "<p>Hello World!</p>");
+//			.WriteAsync(text: "<h1>I'm Dariush Tasdighi</h1>");
 //	});
 //});
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -408,82 +437,17 @@ app.Run();
 // **************************************************
 // **************************************************
 
-// **************************************************
-// **************************************************
-// **************************************************
-// Learn 09
-// **************************************************
-// https://localhost:7271/				->	26
-// https://localhost:7271/test/test1	->	24
-// https://localhost:7271/test/test2	->	25
-// **************************************************
-//using Microsoft.AspNetCore.Http;
-//using Microsoft.AspNetCore.Builder;
 
-//var builder =
-//	Microsoft.AspNetCore.Builder
-//	.WebApplication.CreateBuilder(args: args);
 
-//var app =
-//	builder.Build();
-
-//// Map() -> using Microsoft.AspNetCore.Builder;
-//app.Map(pathMatch: "/test", configuration: app =>
-//{
-//	// Map() -> using Microsoft.AspNetCore.Builder;
-//	app.Map(pathMatch: "/test1", configuration: app =>
-//	{
-//		// Run() -> using Microsoft.AspNetCore.Builder;
-//		app.Run(handler: async context =>
-//		{
-//			// WriteAsync() -> using Microsoft.AspNetCore.Http;
-//			await context.Response
-//				.WriteAsync(text: "<p>Hello World (1)!</p>");
-//		});
-//	});
-
-//	// Map() -> using Microsoft.AspNetCore.Builder;
-//	app.Map(pathMatch: "/test2", configuration: app =>
-//	{
-//		// Run() -> using Microsoft.AspNetCore.Builder;
-//		app.Run(handler: async context =>
-//		{
-//			// WriteAsync() -> using Microsoft.AspNetCore.Http;
-//			await context.Response
-//				.WriteAsync(text: "<p>Hello World (2)!</p>");
-//		});
-//	});
-
-//	// Run() -> using Microsoft.AspNetCore.Builder;
-//	app.Run(handler: async context =>
-//	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
-//		await context.Response
-//			.WriteAsync(text: "<h1>Error 404 - You can just use 'test1' or 'test2'!</h1>");
-//	});
-//});
-
-//// Run() -> using Microsoft.AspNetCore.Builder;
-//app.Run(handler: async context =>
-//{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
-//	await context.Response
-//		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
-//});
-
-//app.Run();
-// **************************************************
-// **************************************************
-// **************************************************
-
-// **************************************************
-// **************************************************
 // **************************************************
 // Learn 10
 // **************************************************
-// https://localhost:7271/				->	29
-// https://localhost:7271/test/test1	->	27
-// https://localhost:7271/test/test2	->	28
+// https://localhost:6001/
+// https://localhost:6001/alaki
+//
+// https://localhost:6001/home/help
+// https://localhost:6001/home/about
+// https://localhost:6001/home/alaki
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -495,34 +459,86 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// Map() -> using Microsoft.AspNetCore.Builder;
-//app.Map(pathMatch: "/test/test1", configuration: app =>
+//app.Map(pathMatch: "/home", configuration: app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
+//	app.Map(pathMatch: "/help", configuration: app =>
+//	{
+//		app.Run(handler: async context =>
+//		{
+//			await context.Response
+//				.WriteAsync(text: "<p>What do you need?</p>");
+//		});
+//	});
+
+//	app.Map(pathMatch: "/about", configuration: app =>
+//	{
+//		app.Run(handler: async context =>
+//		{
+//			await context.Response
+//				.WriteAsync(text: "<p>I'm Dariush Tasdighi</p>");
+//		});
+//	});
+
 //	app.Run(handler: async context =>
 //	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
+//		await context.Response
+//			.WriteAsync(text: "<h1>Error 404 - You can just use 'help' or 'about'!</h1>");
+//	});
+//});
+
+//app.Run(handler: async context =>
+//{
+//	await context.Response
+//		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
+//});
+
+//app.Run();
+// **************************************************
+// **************************************************
+// **************************************************
+
+
+
+// **************************************************
+// Learn 11
+// **************************************************
+// https://localhost:6001/
+// https://localhost:6001/alaki
+//
+// https://localhost:6001/home/help
+// https://localhost:6001/home/about
+// https://localhost:6001/home/alaki
+// **************************************************
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Builder;
+
+//var builder =
+//	Microsoft.AspNetCore.Builder
+//	.WebApplication.CreateBuilder(args: args);
+
+//var app =
+//	builder.Build();
+
+//app.Map(pathMatch: "/home/help", configuration: app =>
+//{
+//	app.Run(handler: async context =>
+//	{
 //		await context.Response
 //			.WriteAsync(text: "<p>Hello World (1)!</p>");
 //	});
 //});
 
-//// Map() -> using Microsoft.AspNetCore.Builder;
-//app.Map(pathMatch: "/test/test2", configuration: app =>
+//app.Map(pathMatch: "/home/about", configuration: app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
 //	app.Run(handler: async context =>
 //	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //		await context.Response
 //			.WriteAsync(text: "<p>Hello World (2)!</p>");
 //	});
 //});
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -532,14 +548,15 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
+// Learn 12
 // **************************************************
-// **************************************************
-// Learn 11
-// **************************************************
-// https://localhost:7271/			->	32
-// https://localhost:7271/?age=20	->	30
-// https://localhost:7271/hitesthi	->	31
+// https://localhost:6001/
+// https://localhost:6001/?age=20
+// https://localhost:6001/hitesthi
+// https://localhost:6001/hitesthi?age=20
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -554,11 +571,10 @@ app.Run();
 //// MapWhen() -> using Microsoft.AspNetCore.Builder;
 //app.MapWhen(predicate: context => context.Request.Query.ContainsKey(key: "age"), app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
 //	app.Run(handler: async context =>
 //	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
-//		await context.Response.WriteAsync(text: "<p>Hello World (1)!</p>");
+//		await context.Response
+//			.WriteAsync(text: "<p>Hello World (1)!</p>");
 //	});
 //});
 
@@ -578,19 +594,15 @@ app.Run();
 //},
 //app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
 //	app.Run(handler: async context =>
 //	{
-//		// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //		await context.Response
 //			.WriteAsync(text: "<p>Hello World (2)!</p>");
 //	});
 //});
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -600,15 +612,15 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 12
+// Learn 13
 // **************************************************
 // 1. Create [wwwroot] folder.
 // 2. Create [Index.html] file in it.
 // 3. Test below url in browser:
-// https://localhost:7271/index.html
+// https://localhost:6001/index.html
 //
 // Note: We can not see the index.html page!
 // **************************************************
@@ -624,16 +636,16 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 13
+// Learn 14
 // **************************************************
 // 1. Create [wwwroot] folder.
 // 2. Create [Index.html] file in it.
 // 3. Test below url in browser:
 //
-// https://localhost:7271/index.html
+// https://localhost:6001/index.html
 //
 // Note: Now, We can see the index.html page!
 // **************************************************
@@ -646,7 +658,7 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// UseStaticFiles() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.UseStaticFiles();
 
 //app.Run();
@@ -654,19 +666,19 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 14
+// Learn 15
 // **************************************************
 // 1. Create [wwwroot] folder.
 // 2. Create [Index.html] file in it.
 // 3. Test below url in browser:
 //
-// https://localhost:7271/
-// https://localhost:7271/index.html
-// https://localhost:7271/images/Dariush.jpg
-// https://localhost:7271/alaki.html
+// https://localhost:6001/
+// https://localhost:6001/index.html
+// https://localhost:6001/images/Dariush.jpg
+// https://localhost:6001/alaki.html
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -678,13 +690,10 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// UseStaticFiles() -> using Microsoft.AspNetCore.Builder;
 //app.UseStaticFiles();
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -692,16 +701,16 @@ app.Run();
 //app.Run();
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 15
+// Learn 16
 // **************************************************
 // استفاده نمی‌کردیم UseStaticFiles اگر از
 //
-// https://localhost:7271/
-// https://localhost:7271/index.html
-// https://localhost:7271/images/Dariush.jpg
+// https://localhost:6001/
+// https://localhost:6001/index.html
+// https://localhost:6001/images/Dariush.jpg
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -713,31 +722,26 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//string contentRootPath =
+//var contentRootPath =
 //	app.Environment.ContentRootPath;
 
-//// Map() -> using Microsoft.AspNetCore.Builder;
-//app.Map(pathMatch: "/index.html", configuration: app =>
-//{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
+//app.Map(pathMatch: "/index.html", configuration: app => {
 //	app.Run(async context =>
 //	{
-//		//string physicalPathName =
+//		//var physicalPathName =
 //		//	$"C:\\inetpub\\Users\\IranianExperets\\wwwroot\\index.html";
 
-//		//string physicalPathName =
-//		//	"{contentRootPath}" + "wwwroot\\index.html";
-
-//		//string physicalPathName =
+//		//var physicalPathName =
 //		//	$"{contentRootPath}wwwroot\\index.html";
 
-//		string physicalPathName =
-//			System.IO.Path.Combine(contentRootPath, "wwwroot", "index.html");
+//		var physicalPathName =
+//			System.IO.Path.Combine
+//			(contentRootPath, "wwwroot", "index.html");
 
-//		if (System.IO.File.Exists(physicalPathName))
+//		if (System.IO.File.Exists(path: physicalPathName))
 //		{
 //			// برنامه را یک بار بدون دو دستور ذیل اجرا می‌کنیم
-//			//context.Response.StatusCode = 200;
+//			context.Response.StatusCode = 200;
 
 //			context.Response.ContentType =
 //				"text/html"; // Mime Type = Content Type = ذات یا ماهیت فایل
@@ -745,31 +749,39 @@ app.Run();
 //			//context.Response.ContentType =
 //			//	"alaki/dolaki"; // Mime Type = Content Type = ذات یا ماهیت فایل
 
-//			// SendFileAsync() -> using Microsoft.AspNetCore.Http;
+//			// using Microsoft.AspNetCore.Http;
 //			await context.Response
 //				.SendFileAsync(fileName: physicalPathName);
+
+//			return;
 //		}
+
+//		await context.Response
+//			.WriteAsync(text: "<h1>Error 404 - 'Index.html' Not Found!</h1>");
 //	});
 //});
 
-//// Map() -> using Microsoft.AspNetCore.Builder;
 //app.Map(pathMatch: "/images/Dariush.jpg", configuration: app =>
 //{
-//	// Run() -> using Microsoft.AspNetCore.Builder;
 //	app.Run(handler: async context =>
 //	{
-//		string physicalPathName =
-//			System.IO.Path.Combine(contentRootPath, "wwwroot\\images", "Dariush.jpg");
+//		var physicalPathName =
+//			System.IO.Path.Combine
+//			(contentRootPath, "wwwroot", "images", "Dariush.jpg");
 
-//		if (System.IO.File.Exists(physicalPathName))
+//		if (System.IO.File.Exists(path: physicalPathName))
 //		{
 //			context.Response.StatusCode = 200;
 //			context.Response.ContentType = "image/jpeg";
 
-//			// SendFileAsync() -> using Microsoft.AspNetCore.Http;
 //			await context.Response
 //				.SendFileAsync(fileName: physicalPathName);
+
+//			return;
 //		}
+
+//		await context.Response
+//			.WriteAsync(text: "<h1>Error 404 - 'Dariush.jpg' Not Found!</h1>");
 //	});
 //});
 
@@ -784,14 +796,16 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
+// Learn 17
 // **************************************************
-// **************************************************
-// Learn 16
-// **************************************************
-// ها بسیار اهمیت دارد Middleware تاکید مضاعف که ترتیب نوشتن
+// استفاده نمی‌کردیم UseStaticFiles اگر از
 //
-// https://localhost:7271/index.html
+// https://localhost:6001/
+// https://localhost:6001/index.html
+// https://localhost:6001/images/Dariush.jpg
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -803,15 +817,104 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
+//var contentRootPath =
+//	app.Environment.ContentRootPath;
+
+//// بنابر دلایل قبل، متاسفانه دستور ذیل کار نمی‌کند
+////app.Map(pathMatch: "/", configuration: app => DisplayHomePage(app: app));
+
+//app.Map(pathMatch: "/index.htm", configuration: app => DisplayHomePage(app: app));
+//app.Map(pathMatch: "/index.html", configuration: app => DisplayHomePage(app: app));
+//app.Map(pathMatch: "/default.htm", configuration: app => DisplayHomePage(app: app));
+//app.Map(pathMatch: "/default.html", configuration: app => DisplayHomePage(app: app));
+
+//void DisplayHomePage
+//	(Microsoft.AspNetCore.Builder.IApplicationBuilder app)
+//{
+//	app.Run(async context =>
+//	{
+//		var physicalPathName =
+//			System.IO.Path.Combine
+//			(contentRootPath, "wwwroot", "index.html");
+
+//		if (System.IO.File.Exists(path: physicalPathName))
+//		{
+//			context.Response.StatusCode = 200;
+//			context.Response.ContentType = "text/html";
+
+//			//// using Microsoft.AspNetCore.Http;
+//			await context.Response
+//				.SendFileAsync(fileName: physicalPathName);
+
+//			return;
+//		}
+
+//		await context.Response
+//			.WriteAsync(text: "<h1>Error 404 - The Home Page Not Found!</h1>");
+//	});
+//}
+
+//app.Map(pathMatch: "/images/Dariush.jpg", configuration: app =>
+//{
+//	app.Run(handler: async context =>
+//	{
+//		var physicalPathName =
+//			System.IO.Path.Combine
+//			(contentRootPath, "wwwroot", "images", "Dariush.jpg");
+
+//		if (System.IO.File.Exists(path: physicalPathName))
+//		{
+//			context.Response.StatusCode = 200;
+//			context.Response.ContentType = "image/jpeg";
+
+//			await context.Response
+//				.SendFileAsync(fileName: physicalPathName);
+
+//			return;
+//		}
+
+//		await context.Response
+//			.WriteAsync(text: "<h1>Error 404 - 'Dariush.jpg' Not Found!</h1>");
+//	});
+//});
+
+//app.Run(async context =>
+//{
+//	await context.Response
+//		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
+//});
+
+//app.Run();
+// **************************************************
+// **************************************************
+// **************************************************
+
+
+
+// **************************************************
+// Learn 18
+// **************************************************
+// ها بسیار اهمیت دارد Middleware تاکید مضاعف که ترتیب نوشتن
+//
+// https://localhost:6001/index.html
+// **************************************************
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Builder;
+
+//var builder =
+//	Microsoft.AspNetCore.Builder
+//	.WebApplication.CreateBuilder(args: args);
+
+//var app =
+//	builder.Build();
+
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "Hello World!");
 //});
 
-//// UseStaticFiles() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.UseStaticFiles();
 
 //app.Run();
@@ -819,10 +922,10 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 17
+// Learn 19
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -834,13 +937,12 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// UseMiddleware() -> using Microsoft.AspNetCore.Builder;
-//app.UseMiddleware<Infrastructure.Middlewares.MyMiddleware>();
+//// using Microsoft.AspNetCore.Builder;
+//app.UseMiddleware
+//	<Infrastructure.Middlewares.MyMiddlewareOld>();
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync()-> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<p>Hello World (2)!</p>");
 //});
@@ -850,10 +952,45 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
+// **************************************************
+// Learn 20
+// **************************************************
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Builder;
+//using Microsoft.Extensions.DependencyInjection;
+
+//var builder =
+//	Microsoft.AspNetCore.Builder
+//	.WebApplication.CreateBuilder(args: args);
+
+////using Microsoft.Extensions.DependencyInjection;
+//builder.Services.AddScoped
+//	<Infrastructure.Middlewares.MyMiddlewareNew>();
+
+//var app =
+//	builder.Build();
+
+//// using Microsoft.AspNetCore.Builder;
+//app.UseMiddleware
+//	<Infrastructure.Middlewares.MyMiddlewareNew>();
+
+//app.Run(handler: async context =>
+//{
+//	await context.Response
+//		.WriteAsync(text: "<p>Hello World (2)!</p>");
+//});
+
+//app.Run();
 // **************************************************
 // **************************************************
 // **************************************************
-// Learn 18
+
+
+
+// **************************************************
+// Learn 21
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Builder;
@@ -865,14 +1002,11 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// UseMiddleware() -> using Microsoft.AspNetCore.Builder;
 //app.UseMiddleware<Infrastructure
 //	.Middlewares.CustomStaticFilesHandlerMiddleware>();
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(handler: async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -882,10 +1016,10 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 19
+// Learn 22
 // **************************************************
 //using Microsoft.AspNetCore.Http;
 //using Infrastructure.Middlewares;
@@ -898,13 +1032,11 @@ app.Run();
 //var app =
 //	builder.Build();
 
-//// UseCustomStaticFiles() -> using Infrastructure.Middlewares;
+//// using Infrastructure.Middlewares;
 //app.UseCustomStaticFiles();
 
-//// Run() -> using Microsoft.AspNetCore.Builder;
 //app.Run(async context =>
 //{
-//	// WriteAsync() -> using Microsoft.AspNetCore.Http;
 //	await context.Response
 //		.WriteAsync(text: "<h1>Error 404 - Content Not Found!</h1>");
 //});
@@ -914,10 +1046,10 @@ app.Run();
 // **************************************************
 // **************************************************
 
+
+
 // **************************************************
-// **************************************************
-// **************************************************
-// Learn 20
+// Learn 23
 // **************************************************
 //using Infrastructure.Middlewares;
 //using Microsoft.AspNetCore.Builder;
@@ -927,16 +1059,16 @@ app.Run();
 //	Microsoft.AspNetCore.Builder
 //	.WebApplication.CreateBuilder(args: args);
 
-//// AddRazorPages() -> using Microsoft.Extensions.DependencyInjection;
+//// using Microsoft.Extensions.DependencyInjection;
 //builder.Services.AddRazorPages();
 
 //var app =
 //	builder.Build();
 
-//// UseCustomStaticFiles() -> using Infrastructure.Middlewares;
+//// using Infrastructure.Middlewares;
 //app.UseGlobalException();
 
-//// MapRazorPages() -> using Microsoft.AspNetCore.Builder;
+//// using Microsoft.AspNetCore.Builder;
 //app.MapRazorPages();
 
 //app.Run();

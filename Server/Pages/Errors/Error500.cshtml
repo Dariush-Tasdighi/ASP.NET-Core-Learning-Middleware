@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{traceId?}"
 @model Server.Pages.Errors.Error500Model
 
 <h1>
@@ -8,3 +8,16 @@
 <h3>
 	Internal Server Error!
 </h3>
+
+<div>
+	@if (string.IsNullOrWhiteSpace(value: Model.TraceId) == false)
+	{
+		<text>Trace Id: [</text>
+
+		@(Model.TraceId)
+
+		<text>]</text>
+	}
+</div>
+
+<hr />

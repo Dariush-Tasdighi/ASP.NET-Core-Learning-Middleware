@@ -6,4 +6,8 @@
 		<!--<ImplicitUsings>enable</ImplicitUsings>-->
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\App_Data\" />
+	</ItemGroup>
+
 </Project>
