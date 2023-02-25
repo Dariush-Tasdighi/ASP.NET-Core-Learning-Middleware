@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Reflection.Emit;
 
 namespace Infrastructure.Middlewares;
 
@@ -34,7 +33,7 @@ public class GlobalExceptionHandlerMiddleware : object
 				httpContext.TraceIdentifier;
 
 			var message =
-				"Request Path: {requestPath)} - Trace Id: {traceId} - Error Message: {Message}";
+				"Request Path: {requestPath} - Trace Id: {traceId} - Error Message: {Message}";
 
 			// دستور ذیل خیلی جزئیات ذخیره می‌کند
 			//Logger.LogError

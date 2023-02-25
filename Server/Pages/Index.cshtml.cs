@@ -10,9 +10,20 @@ public class IndexModel :
 	/// <summary>
 	/// Handler
 	/// </summary>
-	public void OnGet()
+	//public void OnGet()
+	//{
+	//	throw new System.Exception
+	//		(message: "Some Error Occured!");
+	//}
+
+	public async System.Threading.Tasks.Task OnGetAsync()
 	{
-		throw new System.Exception
-			(message: "Some Error Occured!");
-	}
+		if(System.DateTime.Now.Second < 60)
+		{
+			throw new System.Exception
+				(message: "Some Error Occured!");
+		}
+
+		await System.Threading.Tasks.Task.CompletedTask;
+    }
 }
